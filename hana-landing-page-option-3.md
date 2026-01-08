@@ -297,7 +297,7 @@ body::before {
 │              [Add to Chrome]                                │ ← white button
 │                                                             │
 ├─────────────────────────────────────────────────────────────┤
-│  © 2024 Hana Extension              Privacy | Terms        │ ← dark footer
+│  © 2026 JV-IT Techs              Privacy | Terms        │ ← dark footer
 └─────────────────────────────────────────────────────────────┘
 ```
 
