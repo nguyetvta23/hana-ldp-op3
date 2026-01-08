@@ -1,0 +1,149 @@
+{
+    "nav": {
+        "features": "Features",
+        "howItWorks": "How it works",
+        "pricing": "Pricing",
+        "signIn": "Sign In",
+        "addToChrome": "Add to Chrome"
+    },
+    "hero": {
+        "badge": "Được tin dùng bởi 10,000+ người dùng",
+        "headline1": "Duyệt Web Thông Minh",
+        "headline2": "Với Sức Mạnh AI",
+        "description": "Hana tự động tóm tắt nội dung, quản lý tabs thông minh, và giúp bạn tăng năng suất gấp 3 lần - hoàn toàn tự động và không làm gián đoạn công việc.",
+        "ctaPrimary": "Thêm vào Chrome - Miễn phí",
+        "ctaSecondary": "Xem Video Hướng Dẫn",
+        "stats": {
+            "rating": "trên Chrome Store",
+            "users": "người dùng",
+            "timeSaved": "Tiết kiệm",
+            "perDay": "/ngày"
+        },
+        "imageAlt": "Hana Extension trong hành động"
+    },
+    "howItWorks": {
+        "title": "Hana Hoạt Động Như Thế Nào?",
+        "subtitle": "Chỉ 3 bước đơn giản để bắt đầu duyệt web thông minh hơn. Không cần cấu hình phức tạp - Hana tự động làm mọi thứ cho bạn.",
+        "step1": {
+            "title": "Cài Đặt Extension",
+            "description": "Thêm Hana vào Chrome chỉ trong 1 click từ Chrome Web Store. Hoàn toàn miễn phí, không cần đăng ký tài khoản, không cần cung cấp email. Extension rất nhẹ và sẽ không làm chậm trình duyệt của bạn."
+        },
+        "step2": {
+            "title": "Duyệt Web Bình Thường",
+            "description": "Tiếp tục duyệt web như bình thường - đọc tin tức, nghiên cứu, làm việc. Hana chạy ngầm trong nền, tự động phân tích nội dung bạn đang xem, tóm tắt bài viết dài, và tổ chức tabs thông minh theo chủ đề."
+        },
+        "step3": {
+            "title": "Nhận Insights Thông Minh",
+            "description": "Click vào icon Hana bất cứ lúc nào để xem bản tóm tắt của trang hiện tại, insights về nội dung, và các gợi ý được cá nhân hóa bởi AI. Bạn cũng có thể hỏi Hana bất cứ điều gì về nội dung đang đọc."
+        },
+        "imageAlt": "Hana Extension Popup"
+    },
+    "dashboard": {
+        "title": "Dashboard Phân Tích Mạnh Mẽ",
+        "subtitle": "Theo dõi toàn diện thói quen duyệt web của bạn. Xem chi tiết thời gian đã tiết kiệm nhờ tóm tắt AI, số lượng bài viết đã đọc, website truy cập thường xuyên, và phân tích hiệu suất làm việc theo tuần/tháng. Đặt mục tiêu cá nhân và theo dõi tiến độ.",
+        "imageAlt": "Hana Dashboard Interface",
+        "features": {
+            "timeSaved": "Thời gian tiết kiệm",
+            "articlesRead": "Bài viết đã tóm tắt",
+            "topSites": "Website truy cập nhiều nhất",
+            "weeklyStats": "Thống kê hàng tuần",
+            "productivityScore": "Điểm năng suất"
+        }
+    },
+    "features": {
+        "title": "Tính Năng Nổi Bật",
+        "subtitle": "Được thiết kế để tăng năng suất tối đa với công nghệ AI tiên tiến nhất",
+        "feature1": {
+            "title": "Tóm Tắt Thông Minh",
+            "description": "AI phân tích và tóm tắt bất kỳ bài viết nào chỉ trong vài giây. Nắm bắt ý chính từ bài báo dài, paper nghiên cứu, hay documentation kỹ thuật mà không cần đọc toàn bộ. Hỗ trợ đa ngôn ngữ và tùy chỉnh độ dài tóm tắt.",
+            "highlights": [
+                "Tóm tắt trong 3 giây",
+                "Hỗ trợ 20+ ngôn ngữ",
+                "Tùy chỉnh độ dài"
+            ]
+        },
+        "feature2": {
+            "title": "Siêu Nhanh & Nhẹ",
+            "description": "Được tối ưu hóa đến từng byte. Hana sử dụng caching thông minh, lazy loading, và background processing để đảm bảo không làm chậm trình duyệt dù bạn mở bao nhiêu tabs. Tiêu thụ RAM dưới 50MB.",
+            "highlights": [
+                "Dưới 50MB RAM",
+                "Không ảnh hưởng tốc độ",
+                "Background processing"
+            ]
+        },
+        "feature3": {
+            "title": "Bảo Mật Tuyệt Đối",
+            "description": "Dữ liệu của bạn được xử lý cục bộ trên máy, không gửi về bất kỳ server nào. Chúng tôi không thu thập lịch sử duyệt web, không tracking, không quảng cáo. Mã nguồn được kiểm toán bảo mật định kỳ.",
+            "highlights": [
+                "Xử lý cục bộ",
+                "Không tracking",
+                "Kiểm toán bảo mật"
+            ]
+        },
+        "feature4": {
+            "title": "Quản Lý Ngữ Cảnh Theo Dự Án",
+            "description": "Tổ chức công việc theo từng dự án riêng biệt. Hana ghi nhớ ngữ cảnh của từng project, tự động áp dụng thuật ngữ chuyên ngành và từ vựng phù hợp khi bạn chuyển đổi giữa các dự án. Hoàn hảo cho freelancers và team làm việc nhiều dự án.",
+            "highlights": [
+                "Lưu ngữ cảnh theo project",
+                "Từ điển chuyên ngành",
+                "Tự động ghi nhớ"
+            ]
+        }
+    },
+    "cta": {
+        "title": "Sẵn Sàng Nâng Cấp Trình Duyệt?",
+        "subtitle": "Tham gia cùng hàng nghìn người dùng đã thay đổi cách họ tương tác với web. Bắt đầu tiết kiệm 2 giờ mỗi ngày ngay hôm nay.",
+        "button": "Thêm Vào Chrome",
+        "badge1": "Miễn phí mãi mãi",
+        "badge2": "Không cần thẻ tín dụng",
+        "badge3": "Xóa bất cứ lúc nào"
+    },
+    "footer": {
+        "privacy": "Chính Sách Bảo Mật",
+        "terms": "Điều Khoản Sử Dụng",
+        "twitter": "Twitter",
+        "support": "Hỗ Trợ",
+        "copyright": "© 2024 Hana Extension. All rights reserved."
+    },
+    "videoPopup": {
+        "title": "Hướng Dẫn Sử Dụng Hana"
+    },
+    "privacy": {
+        "title": "Bảo Mật Là Ưu Tiên Hàng Đầu",
+        "subtitle": "Dữ liệu của bạn luôn an toàn",
+        "features": {
+            "localProcessing": {
+                "title": "Xử Lý Cục Bộ",
+                "description": "Tất cả dữ liệu xử lý ngay trên máy bạn"
+            },
+            "noTracking": {
+                "title": "Không Theo Dõi",
+                "description": "Không thu thập lịch sử duyệt web"
+            },
+            "noUpload": {
+                "title": "Không Upload",
+                "description": "Không gửi dữ liệu về server nào"
+            },
+            "securityAudit": {
+                "title": "Kiểm Toán Bảo Mật",
+                "description": "Mã nguồn được audit định kỳ"
+            }
+        },
+        "comparison": "Khác với các AI assistant khác, Hana không bao giờ truy cập hay lưu trữ dữ liệu của bạn"
+    },
+    "faq": {
+        "badge": "Câu Hỏi Thường Gặp",
+        "title": "Có Thắc Mắc Gì Không?",
+        "subtitle": "Những câu hỏi phổ biến nhất về Hana",
+        "questions": {
+            "isFree": "Hana có thực sự miễn phí không?",
+            "isFreeAnswer": "Có! Hana hoàn toàn miễn phí. Không có phí ẩn, không cần thẻ tín dụng, và bạn có thể sử dụng mãi mãi.",
+            "dataProtection": "Dữ liệu của tôi được bảo vệ như thế nào?",
+            "dataProtectionAnswer": "Tất cả dữ liệu được xử lý cục bộ trên máy tính của bạn. Chúng tôi không thu thập, lưu trữ, hay truy cập lịch sử duyệt web của bạn.",
+            "browserSpeed": "Hana có làm chậm trình duyệt không?",
+            "browserSpeedAnswer": "Không! Hana sử dụng dưới 50MB RAM và được tối ưu với background processing. Bạn sẽ không cảm nhận được bất kỳ sự chậm trễ nào.",
+            "browsers": "Hana hỗ trợ những trình duyệt nào?",
+            "browsersAnswer": "Hana hoạt động trên Chrome, Edge, và tất cả trình duyệt dựa trên Chromium như Brave, Arc, Opera."
+        }
+    }
+}

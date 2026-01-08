@@ -1,0 +1,149 @@
+{
+    "nav": {
+        "features": "Features",
+        "howItWorks": "How it works",
+        "pricing": "Pricing",
+        "signIn": "Sign In",
+        "addToChrome": "Add to Chrome"
+    },
+    "hero": {
+        "badge": "Trusted by 10,000+ users",
+        "headline1": "Browse Smarter",
+        "headline2": "With AI Power",
+        "description": "Hana automatically summarizes content, manages tabs intelligently, and boosts your productivity 3x - completely automated and non-intrusive.",
+        "ctaPrimary": "Add to Chrome - It's Free",
+        "ctaSecondary": "Watch Instruction Video",
+        "stats": {
+            "rating": "on Chrome Store",
+            "users": "users",
+            "timeSaved": "Save",
+            "perDay": "/day"
+        },
+        "imageAlt": "Hana Extension in Action"
+    },
+    "howItWorks": {
+        "title": "How Does Hana Work?",
+        "subtitle": "Just 3 simple steps to start browsing smarter. No complex setup required - Hana handles everything automatically for you.",
+        "step1": {
+            "title": "Install the Extension",
+            "description": "Add Hana to Chrome with just one click from the Chrome Web Store. Completely free, no registration required, no email needed. The extension is super lightweight and won't slow down your browser."
+        },
+        "step2": {
+            "title": "Browse as Usual",
+            "description": "Continue browsing the web normally - read news, research, work. Hana runs silently in the background, automatically analyzing the content you're viewing, summarizing long articles, and organizing tabs intelligently by topic."
+        },
+        "step3": {
+            "title": "Get Smart Insights",
+            "description": "Click the Hana icon anytime to see a summary of the current page, content insights, and AI-personalized suggestions. You can also ask Hana anything about what you're reading."
+        },
+        "imageAlt": "Hana Extension Popup"
+    },
+    "dashboard": {
+        "title": "Powerful Analytics Dashboard",
+        "subtitle": "Comprehensive tracking of your browsing habits. View detailed time saved through AI summaries, number of articles read, frequently visited websites, and weekly/monthly productivity analysis. Set personal goals and track your progress.",
+        "imageAlt": "Hana Dashboard Interface",
+        "features": {
+            "timeSaved": "Time Saved",
+            "articlesRead": "Articles Summarized",
+            "topSites": "Most Visited Sites",
+            "weeklyStats": "Weekly Statistics",
+            "productivityScore": "Productivity Score"
+        }
+    },
+    "features": {
+        "title": "Key Features",
+        "subtitle": "Designed for maximum productivity with cutting-edge AI technology",
+        "feature1": {
+            "title": "Smart Summarization",
+            "description": "AI analyzes and summarizes any article in just seconds. Grasp key points from long articles, research papers, or technical documentation without reading everything. Supports multiple languages and customizable summary length.",
+            "highlights": [
+                "Summarize in 3 seconds",
+                "20+ languages supported",
+                "Customizable length"
+            ]
+        },
+        "feature2": {
+            "title": "Lightning Fast & Lightweight",
+            "description": "Optimized down to every byte. Hana uses smart caching, lazy loading, and background processing to ensure it never slows down your browser regardless of how many tabs you open. Uses less than 50MB RAM.",
+            "highlights": [
+                "Under 50MB RAM",
+                "Zero speed impact",
+                "Background processing"
+            ]
+        },
+        "feature3": {
+            "title": "Absolute Security",
+            "description": "Your data is processed locally on your machine, never sent to any server. We don't collect browsing history, no tracking, no ads. Our codebase is regularly security audited.",
+            "highlights": [
+                "Local processing",
+                "Zero tracking",
+                "Security audited"
+            ]
+        },
+        "feature4": {
+            "title": "Project Context Management",
+            "description": "Organize work by individual projects. Hana remembers the context of each project, automatically applying industry terminology and appropriate vocabulary when switching between projects. Perfect for freelancers and teams working on multiple projects.",
+            "highlights": [
+                "Save context per project",
+                "Industry glossaries",
+                "Auto-remember settings"
+            ]
+        }
+    },
+    "cta": {
+        "title": "Ready to Upgrade Your Browser?",
+        "subtitle": "Join thousands of users who have transformed the way they interact with the web. Start saving 2 hours every day today.",
+        "button": "Add to Chrome",
+        "badge1": "Free forever",
+        "badge2": "No credit card required",
+        "badge3": "Uninstall anytime"
+    },
+    "footer": {
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "twitter": "Twitter",
+        "support": "Support",
+        "copyright": "© 2024 Hana Extension. All rights reserved."
+    },
+    "videoPopup": {
+        "title": "Hana Getting Started Guide"
+    },
+    "privacy": {
+        "title": "Privacy Is Our Top Priority",
+        "subtitle": "Your data stays safe with you",
+        "features": {
+            "localProcessing": {
+                "title": "Local Processing",
+                "description": "All data processed right on your device"
+            },
+            "noTracking": {
+                "title": "Zero Tracking",
+                "description": "No browsing history collection"
+            },
+            "noUpload": {
+                "title": "No Server Uploads",
+                "description": "Data never leaves your machine"
+            },
+            "securityAudit": {
+                "title": "Security Audited",
+                "description": "Codebase regularly reviewed"
+            }
+        },
+        "comparison": "Unlike other AI assistants, Hana never accesses or stores your personal data"
+    },
+    "faq": {
+        "badge": "FAQ",
+        "title": "Got Questions?",
+        "subtitle": "Most common questions about Hana",
+        "questions": {
+            "isFree": "Is Hana really free?",
+            "isFreeAnswer": "Yes! Hana is completely free. No hidden fees, no credit card required, and you can use it forever.",
+            "dataProtection": "How is my data protected?",
+            "dataProtectionAnswer": "All data is processed locally on your computer. We don't collect, store, or access your browsing history.",
+            "browserSpeed": "Does Hana slow down my browser?",
+            "browserSpeedAnswer": "Not at all! Hana uses under 50MB RAM and is optimized with background processing. You won't notice any slowdown.",
+            "browsers": "What browsers does Hana support?",
+            "browsersAnswer": "Hana works on Chrome, Edge, and all Chromium-based browsers like Brave, Arc, and Opera."
+        }
+    }
+}

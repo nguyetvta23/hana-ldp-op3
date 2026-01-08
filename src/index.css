@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Option 3: Zen Focus - Minimalist Teal/Emerald */
+    --color-primary: 13 148 136;       /* teal-600 */
+    --color-primary-light: 20 184 166; /* teal-500 */
+    --color-accent: 245 158 11;        /* amber-500 */
+    
+    --bg-primary: 250 250 250;         /* zinc-50 (warm white) */
+    --bg-surface: 255 255 255;         /* white */
+    
+    --text-primary: 24 24 27;          /* zinc-900 */
+    --text-secondary: 82 82 91;        /* zinc-600 */
+    --text-muted: 161 161 170;         /* zinc-400 */
+    
+    --border-color: 228 228 231;       /* zinc-200 */
+  }
+
+  body {
+    @apply bg-zinc-50 text-zinc-900 font-sans antialiased selection:bg-teal-500/20 selection:text-teal-700;
+  }
+  
+  /* Optional: subtle paper texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.02) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0,0,0,0.02) 3px
+      );
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+@layer utilities {
+  /* Minimalist card - very subtle shadow */
+  .card-zen {
+    @apply bg-white border border-zinc-100 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-xl;
+  }
+  
+  /* Clean button styles */
+  .btn-zen-primary {
+    @apply bg-teal-600 text-white px-6 py-3 rounded-xl font-medium shadow-sm hover:bg-teal-700 transition-all duration-200;
+  }
+  
+  .btn-zen-secondary {
+    @apply bg-white text-zinc-700 px-6 py-3 rounded-xl font-medium border border-zinc-200 hover:border-teal-300 hover:text-teal-700 transition-all duration-200;
+  }
+  
+  /* Text accent */
+  .text-zen-accent {
+    @apply text-teal-600;
+  }
+  
+  /* Badge - very minimal */
+  .badge-zen {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-sm font-medium border border-teal-100;
+  }
+  
+  /* Section background */
+  .section-zen {
+    @apply bg-white;
+  }
+}
