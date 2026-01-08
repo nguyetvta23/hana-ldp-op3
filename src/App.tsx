@@ -19,6 +19,7 @@ import browserAction from './assets/browser-action.png';
 
 // Link tới extension options
 const EXTENSION_OPTIONS_URL = 'chrome-extension://aanhdfigalepndomldgkbhpdlihgnfoo/options.html';
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/hana/ggafbdlheobfbbpdmonpcncbjidfilnd';
 
 function App() {
   const { t } = useTranslation();
@@ -58,10 +59,15 @@ function App() {
               {t('nav.signIn')}
             </a>
             {/* Add to Chrome Button */}
-            <button className="hidden sm:flex items-center gap-2 btn-zen-primary text-sm">
+            <a
+              href={CHROME_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center gap-2 btn-zen-primary text-sm"
+            >
               <Chrome className="w-4 h-4" />
               {t('nav.addToChrome')}
-            </button>
+            </a>
           </div>
         </div>
       </nav>
@@ -106,10 +112,15 @@ function App() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <button className="btn-zen-primary flex items-center gap-2 px-8 py-4 text-base">
+            <a
+              href={CHROME_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-zen-primary flex items-center gap-2 px-8 py-4 text-base"
+            >
               <Chrome className="w-5 h-5" />
               {t('hero.ctaPrimary')} <ArrowRight className="w-5 h-5" />
-            </button>
+            </a>
             <button
               onClick={() => setIsVideoOpen(true)}
               className="btn-zen-secondary flex items-center gap-2 px-8 py-4 text-base"
@@ -277,10 +288,15 @@ function App() {
           <p className="text-teal-100 mb-12 text-lg">
             {t('cta.subtitle')}
           </p>
-          <button className="px-10 py-4 rounded-xl bg-white text-teal-700 font-bold hover:bg-zinc-50 transition-all shadow-sm inline-flex items-center gap-2">
+          <a
+            href={CHROME_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 rounded-xl bg-white text-teal-700 font-bold hover:bg-zinc-50 transition-all shadow-sm inline-flex items-center gap-2"
+          >
             <Chrome className="w-5 h-5" />
             {t('cta.button')}
-          </button>
+          </a>
           <p className="mt-6 text-sm text-teal-100 flex items-center justify-center gap-4 flex-wrap">
             <span className="flex items-center gap-2">
               <Check className="w-4 h-4" /> {t('cta.badge1')}
