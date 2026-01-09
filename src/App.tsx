@@ -1,23 +1,21 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Sparkles, Zap, Shield, Brain, ArrowRight, Check, Star, Users, Clock, Play, Chrome } from 'lucide-react';
-
+import { Sparkles, ArrowRight, Lock, Zap, Shield, Check, Chrome, Play } from 'lucide-react';
 
 // Import components
 import { LanguageSwitcher } from './components/LanguageSwitcher';
-import { FeatureCard } from './components/FeatureCard';
-import { StepCard } from './components/StepCard';
+import { PillarSection } from './components/PillarSection';
+import { ProductImage } from './components/ProductImage';
 import { VideoPopup } from './components/VideoPopup';
-import { PrivacyBadge } from './components/PrivacyBadge';
-import { FAQSection } from './components/FAQSection';
 
 // Import hình mockup
-import extensionPopup from './assets/extension-popup.png';
-import dashboardUI from './assets/dashboard-real.png';
-import browserAction from './assets/browser-action.png';
+import bannerImage from './assets/banner.png';
+import chatHana from './assets/chat-hana.png';
+import quickTranslate from './assets/quick-translate.png';
+import contextManagement from './assets/context-management.png';
 
-// Link tới extension options
+// Links
 const EXTENSION_OPTIONS_URL = 'chrome-extension://aanhdfigalepndomldgkbhpdlihgnfoo/options.html';
 const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/hana/ggafbdlheobfbbpdmonpcncbjidfilnd';
 
@@ -25,8 +23,14 @@ function App() {
   const { t } = useTranslation();
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900 font-sans">
+    <div className="min-h-screen bg-white text-zinc-900 font-sans">
       {/* Video Popup */}
       <VideoPopup
         isOpen={isVideoOpen}
@@ -34,302 +38,265 @@ function App() {
         videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
       />
 
-      {/* Navigation - Clean minimal header */}
-      <nav className="sticky top-0 z-50 w-full px-6 py-4 bg-zinc-50/80 backdrop-blur-sm border-b border-zinc-100">
-        <div className="flex justify-between items-center max-w-7xl mx-auto">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-teal-600 flex items-center justify-center">
+      {/* Navigation - Ultra minimal */}
+      <nav className="fixed top-0 z-50 w-full px-6 py-4 bg-white/80 backdrop-blur-sm" aria-label="Main navigation">
+        <div className="flex justify-between items-center max-w-content mx-auto">
+          <a href="/" className="flex items-center gap-2" aria-label="Hana - Home">
+            <div className="w-8 h-8 rounded-lg bg-teal-600 flex items-center justify-center" aria-hidden="true">
               <Sparkles className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-heading font-bold tracking-tight text-zinc-900">Hana</span>
-          </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
-            <a href="#features" className="hover:text-teal-600 transition-colors">{t('nav.features')}</a>
-            <a href="#how-it-works" className="hover:text-teal-600 transition-colors">{t('nav.howItWorks')}</a>
-            <a href="#pricing" className="hover:text-teal-600 transition-colors">{t('nav.pricing')}</a>
-          </div>
-          <div className="flex items-center gap-3">
+            <span className="text-xl font-heading font-bold tracking-tight">Hana</span>
+          </a>
+          <div className="flex items-center gap-4">
             <LanguageSwitcher />
             <a
               href={EXTENSION_OPTIONS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg text-zinc-600 hover:text-zinc-900 hover:bg-white transition-all text-sm font-medium"
+              className="hidden sm:block text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
+              aria-label="Sign in to Hana"
             >
               {t('nav.signIn')}
             </a>
-            {/* Add to Chrome Button */}
             <a
               href={CHROME_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-2 btn-zen-primary text-sm"
+              className="btn-apple text-sm flex items-center gap-2"
+              aria-label="Add Hana to Chrome browser"
             >
-              <Chrome className="w-4 h-4" />
-              {t('nav.addToChrome')}
+              <Chrome className="w-4 h-4" aria-hidden="true" />
+              <span className="hidden sm:inline">{t('nav.addToChrome')}</span>
             </a>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section - Generous whitespace */}
-      <section className="relative z-10 pt-32 pb-40 px-6 bg-zinc-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="badge-zen mb-8"
-          >
-            <Sparkles className="w-4 h-4" />
-            <span>{t('hero.badge')}</span>
-          </motion.div>
-
+      {/* Hero Section - Full viewport, centered */}
+      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div className="text-center max-w-4xl mx-auto">
           <motion.h1
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="text-5xl md:text-7xl font-heading font-bold leading-tight mb-8 text-zinc-900"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            transition={{ duration: 0.6 }}
+            className="text-hero text-zinc-900 mb-6"
           >
             {t('hero.headline1')}<br />
-            <span className="text-zen-accent">
-              {t('hero.headline2')}
-            </span>
+            <span className="text-teal-600">{t('hero.headline2')}</span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="text-lg md:text-xl text-zinc-600 mb-12 max-w-2xl mx-auto leading-relaxed"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-xl md:text-2xl text-zinc-500 mb-10 max-w-2xl mx-auto"
           >
             {t('hero.description')}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
               href={CHROME_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-zen-primary flex items-center gap-2 px-8 py-4 text-base"
+              className="btn-apple inline-flex items-center gap-2"
             >
               <Chrome className="w-5 h-5" />
-              {t('hero.ctaPrimary')} <ArrowRight className="w-5 h-5" />
+              {t('hero.ctaPrimary')}
+              <ArrowRight className="w-5 h-5" />
             </a>
             <button
               onClick={() => setIsVideoOpen(true)}
-              className="btn-zen-secondary flex items-center gap-2 px-8 py-4 text-base"
+              className="btn-apple-secondary inline-flex items-center gap-2"
             >
               <Play className="w-5 h-5" />
               {t('hero.ctaSecondary')}
             </button>
           </motion.div>
-
-          {/* Stats - Minimal design */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-            className="mt-20 flex flex-wrap justify-center gap-8 text-sm"
-          >
-            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-zinc-100">
-              <Star className="w-5 h-5 text-amber-500 fill-amber-500" />
-              <span className="text-zinc-600"><strong className="text-zinc-900">4.9/5</strong> {t('hero.stats.rating')}</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-zinc-100">
-              <Users className="w-5 h-5 text-teal-600" />
-              <span className="text-zinc-600"><strong className="text-zinc-900">10K+</strong> {t('hero.stats.users')}</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-zinc-100">
-              <Clock className="w-5 h-5 text-emerald-500" />
-              <span className="text-zinc-600">{t('hero.stats.timeSaved')} <strong className="text-zinc-900">2h{t('hero.stats.perDay')}</strong></span>
-            </div>
-          </motion.div>
-
-          {/* Hero Visual Mockup */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-            className="mt-24 relative mx-auto max-w-6xl"
-          >
-            <div className="relative rounded-2xl border border-zinc-200 bg-white shadow-md overflow-hidden">
-              <img
-                src={browserAction}
-                alt={t('hero.imageAlt')}
-                className="w-full h-auto"
-              />
-            </div>
-          </motion.div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-32 relative bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-zinc-900">
-              {t('howItWorks.title')}
-            </h2>
-            <p className="text-zinc-600 text-lg max-w-3xl mx-auto">
-              {t('howItWorks.subtitle')}
-            </p>
-          </div>
+      {/* Product Showcase - Real extension screenshot */}
+      <section className="py-16 bg-zinc-50">
+        <ProductImage
+          src={bannerImage}
+          alt={t('productShowcase.imageAlt')}
+          caption={t('productShowcase.caption')}
+          size="large"
+        />
+      </section>
 
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* Extension Popup */}
-            <div className="order-2 md:order-1">
-              <div className="relative rounded-3xl border border-zinc-100 bg-zinc-50 shadow-sm overflow-hidden p-10 flex items-center justify-center">
-                <img
-                  src={extensionPopup}
-                  alt={t('howItWorks.imageAlt')}
-                  className="w-auto h-[500px] object-contain"
-                />
+      {/* Pillar 1: AI That Understands */}
+      <PillarSection
+        headline={t('pillars.ai.headline')}
+        description={t('pillars.ai.description')}
+        imageSrc={chatHana}
+        imageAlt="Hana AI Chat Interface"
+        layout="center"
+        imageSize="small"
+      />
+
+      {/* Pillar 2: Context That Persists */}
+      <PillarSection
+        headline={t('pillars.context.headline')}
+        description={t('pillars.context.description')}
+        imageSrc={contextManagement}
+        imageAlt="Project Context & Glossary Management"
+        layout="left"
+        bgColor="zinc"
+      />
+
+      {/* Pillar 3: Workflow That Flows */}
+      <PillarSection
+        headline={t('pillars.workflow.headline')}
+        description={t('pillars.workflow.description')}
+        imageSrc={quickTranslate}
+        imageAlt="Quick Translation Feature"
+        layout="right"
+      />
+
+      {/* Pillar 4: Security - Icons instead of image */}
+      <PillarSection
+        headline={t('pillars.security.headline')}
+        description={t('pillars.security.description')}
+        layout="center"
+        bgColor="zinc"
+        icons={
+          <>
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center mx-auto mb-3">
+                <Lock className="w-8 h-8 text-teal-600" />
               </div>
+              <span className="text-sm text-zinc-600">{t('pillars.security.features.encrypted')}</span>
             </div>
-
-            {/* Steps */}
-            <div className="order-1 md:order-2 space-y-12">
-              <StepCard
-                number="1"
-                title={t('howItWorks.step1.title')}
-                description={t('howItWorks.step1.description')}
-              />
-              <StepCard
-                number="2"
-                title={t('howItWorks.step2.title')}
-                description={t('howItWorks.step2.description')}
-              />
-              <StepCard
-                number="3"
-                title={t('howItWorks.step3.title')}
-                description={t('howItWorks.step3.description')}
-              />
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center mx-auto mb-3">
+                <Zap className="w-8 h-8 text-teal-600" />
+              </div>
+              <span className="text-sm text-zinc-600">{t('pillars.security.features.fast')}</span>
             </div>
-          </div>
-        </div>
-      </section>
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center mx-auto mb-3">
+                <Shield className="w-8 h-8 text-teal-600" />
+              </div>
+              <span className="text-sm text-zinc-600">{t('pillars.security.features.secure')}</span>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center mx-auto mb-3">
+                <Check className="w-8 h-8 text-teal-600" />
+              </div>
+              <span className="text-sm text-zinc-600">{t('pillars.security.features.private')}</span>
+            </div>
+          </>
+        }
+      />
 
-      {/* Dashboard Preview */}
-      <section className="py-32 relative bg-zinc-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-zinc-900">
-              {t('dashboard.title')}
-            </h2>
-            <p className="text-zinc-600 text-lg max-w-3xl mx-auto">
-              {t('dashboard.subtitle')}
-            </p>
-          </div>
-
-          <div className="relative rounded-3xl border border-zinc-200 bg-white shadow-md overflow-hidden">
-            <img
-              src={dashboardUI}
-              alt={t('dashboard.imageAlt')}
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="py-32 relative bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-zinc-900">
-              {t('features.title')}
-            </h2>
-            <p className="text-zinc-600 text-lg">
-              {t('features.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <FeatureCard
-              icon={<Brain className="w-6 h-6 text-teal-600" />}
-              title={t('features.feature1.title')}
-              description={t('features.feature1.description')}
-            />
-            <FeatureCard
-              icon={<Zap className="w-6 h-6 text-amber-500" />}
-              title={t('features.feature2.title')}
-              description={t('features.feature2.description')}
-            />
-            <FeatureCard
-              icon={<Shield className="w-6 h-6 text-emerald-500" />}
-              title={t('features.feature3.title')}
-              description={t('features.feature3.description')}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Privacy Badge Section */}
-      <section className="py-20 px-6 bg-zinc-50">
-        <div className="max-w-4xl mx-auto">
-          <PrivacyBadge />
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <FAQSection />
-
-      {/* CTA Section - Teal solid background */}
-      <section id="pricing" className="py-32 px-6 text-center bg-teal-600">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-white">
-            {t('cta.title')}
-          </h2>
-          <p className="text-teal-100 mb-12 text-lg">
-            {t('cta.subtitle')}
+      {/* Social Proof - Minimal */}
+      <section className="py-section bg-white">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mx-auto px-6 text-center"
+        >
+          <p className="text-2xl md:text-3xl text-zinc-900 italic mb-4">
+            "{t('socialProof.quote')}"
           </p>
+          <div className="flex items-center justify-center gap-1 text-amber-500 mb-2">
+            ★★★★★
+          </div>
+          <p className="text-sm text-zinc-500">
+            {t('socialProof.rating')} • {t('socialProof.author')}
+          </p>
+        </motion.div>
+      </section>
+
+      {/* FAQ - Minimal */}
+      <section className="py-section bg-zinc-50">
+        <div className="max-w-2xl mx-auto px-6">
+          <motion.h2
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="text-headline text-center mb-16"
+          >
+            {t('faq.title')}
+          </motion.h2>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            transition={{ delay: 0.1 }}
+            className="space-y-8"
+          >
+            <div>
+              <h3 className="text-lg font-semibold mb-2">{t('faq.questions.isFree')}</h3>
+              <p className="text-zinc-500">{t('faq.questions.isFreeAnswer')}</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">{t('faq.questions.dataProtection')}</h3>
+              <p className="text-zinc-500">{t('faq.questions.dataProtectionAnswer')}</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">{t('faq.questions.browserSpeed')}</h3>
+              <p className="text-zinc-500">{t('faq.questions.browserSpeedAnswer')}</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Final CTA - Ultra simple */}
+      <section className="py-section-lg bg-white text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+          className="max-w-xl mx-auto px-6"
+        >
+          <h2 className="text-headline mb-10">{t('cta.title')}</h2>
+
           <a
             href={CHROME_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-10 py-4 rounded-xl bg-white text-teal-700 font-bold hover:bg-zinc-50 transition-all shadow-sm inline-flex items-center gap-2"
+            className="btn-apple inline-flex items-center gap-2 text-lg"
           >
-            <Chrome className="w-5 h-5" />
+            <Chrome className="w-6 h-6" aria-hidden="true" />
             {t('cta.button')}
           </a>
-          <p className="mt-6 text-sm text-teal-100 flex items-center justify-center gap-4 flex-wrap">
-            <span className="flex items-center gap-2">
-              <Check className="w-4 h-4" /> {t('cta.badge1')}
-            </span>
-            <span className="mx-2">•</span>
-            <span className="flex items-center gap-2">
-              <Check className="w-4 h-4" /> {t('cta.badge2')}
-            </span>
-            <span className="mx-2">•</span>
-            <span className="flex items-center gap-2">
-              <Check className="w-4 h-4" /> {t('cta.badge3')}
-            </span>
-          </p>
-        </div>
+        </motion.div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-zinc-900 py-12 text-center text-zinc-400 text-sm">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      {/* Footer - Minimal */}
+      <footer className="bg-zinc-900 py-8 text-center text-zinc-400 text-sm">
+        <div className="max-w-content mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2 text-white">
             <Sparkles className="w-4 h-4" />
-            <span className="font-bold font-heading">Hana</span>
+            <span className="font-bold">Hana</span>
           </div>
-          <div className="flex gap-8">
+          <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</a>
             <a href="#" className="hover:text-white transition-colors">{t('footer.terms')}</a>
-            <a href="#" className="hover:text-white transition-colors">{t('footer.twitter')}</a>
             <a href="#" className="hover:text-white transition-colors">{t('footer.support')}</a>
           </div>
           <p>{t('footer.copyright')}</p>
         </div>
       </footer>
-    </div >
+    </div>
   );
 }
 

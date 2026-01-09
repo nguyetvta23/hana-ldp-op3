@@ -10,6 +10,23 @@ export default {
         sans: ['Inter', 'sans-serif'],
         heading: ['DM Sans', 'sans-serif'],
       },
+      // Apple Minimalist: Large typography scale
+      fontSize: {
+        'hero': ['clamp(3rem, 10vw, 7rem)', { lineHeight: '0.95', letterSpacing: '-0.02em', fontWeight: '600' }],
+        'headline': ['clamp(2.5rem, 8vw, 5rem)', { lineHeight: '1', letterSpacing: '-0.02em', fontWeight: '600' }],
+        'subheadline': ['clamp(1.25rem, 3vw, 1.5rem)', { lineHeight: '1.5', fontWeight: '400' }],
+      },
+      // Apple Minimalist: Generous spacing
+      spacing: {
+        'section': '8rem',      // 128px vertical padding
+        'section-lg': '12rem',  // 192px vertical padding
+      },
+      // Apple Minimalist: Content constraints
+      maxWidth: {
+        'text': '640px',        // Max width for body text
+        'image': '1000px',      // Max width for product images
+        'content': '1200px',    // Max content width
+      },
       colors: {
         // Option 3: Zen Focus - Teal/Emerald Theme
         teal: {
@@ -50,6 +67,7 @@ export default {
         'sm': '0 1px 2px rgba(0, 0, 0, 0.03)',
         'md': '0 2px 8px rgba(0, 0, 0, 0.04)',
         'lg': '0 4px 16px rgba(0, 0, 0, 0.06)',
+        'product': '0 50px 100px rgba(0, 0, 0, 0.12)', // Apple-style product shadow
       },
       borderRadius: {
         'md': '0.75rem',  // 12px
